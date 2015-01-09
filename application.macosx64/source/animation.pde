@@ -34,6 +34,7 @@ class Animation {
       numFrames--;
       for(int i=whichFrame; i<numFrames; i++) animation[i]= animation[i+1];
     }
+    animation[numFrames]= null;
     lastFrameRemoveTime= millis();
   }
   
@@ -62,6 +63,7 @@ class Animation {
   }
   
   public void clearAnimation(){
+    for (int i=0; i<maxLength; i++) animation[i]= null;
     numFrames=0;
     playhead=0;
   }
